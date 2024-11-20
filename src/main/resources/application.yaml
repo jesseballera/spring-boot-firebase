@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    gcp:
+      project-id: purple-mango-35d79
+      firestore:
+        credentials:
+          location: classpath:purple-mango-35d79-firebase-adminsdk-it42e-13071f552f.json
