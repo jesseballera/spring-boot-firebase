@@ -26,13 +26,13 @@ public class PermissionHandler {
 
     //retrieve a permission by id
     public Mono<ServerResponse> findById(ServerRequest request) {
-        return ServerResponse.ok().body(permissionRepository.findById(request.pathVariable("permission-id")), Permission.class)
+        return ServerResponse.ok().body(permissionRepository.findByPermissionId(request.pathVariable("id")), Permission.class)
                 .switchIfEmpty(ServerResponse.notFound().build());
     }
 
     //retrieve a permission by  name
     public Mono<ServerResponse> findByName(ServerRequest request) {
-        return ServerResponse.ok().body(permissionRepository.findByName(request.queryParam("permission-name").get()), Permission.class)
+        return ServerResponse.ok().body(permissionRepository.findByName(request.queryParam("name").get()), Permission.class)
                 .switchIfEmpty(ServerResponse.notFound().build());
     }
 
@@ -57,7 +57,7 @@ public class PermissionHandler {
     //delete permission
     public Mono<ServerResponse> delete(ServerRequest request) {
         return permissionRepository
-                .deleteById(request.pathVariable("permissionId"))
+                .deleteById(request.pathVariable("id"))
                 .then(ServerResponse.noContent().build());
     }
 

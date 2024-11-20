@@ -7,5 +7,6 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface PermissionRepository extends FirestoreReactiveRepository<Permission> {
+    Mono<Permission> findByPermissionId(String permissionName);
     Mono<Permission> findByName(String permissionName);
 }

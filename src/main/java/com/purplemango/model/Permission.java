@@ -12,7 +12,7 @@ import org.springframework.stereotype.Indexed;
 @Document(collectionName = "permissions")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Permission {
-        @DocumentId String id;
+        @DocumentId String permissionId;
         String name;
         StatusType status;
 }
