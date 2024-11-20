@@ -19,7 +19,7 @@
     <properties>
         <java.version>22</java.version>
         <com.google.cloud.version>5.5.0</com.google.cloud.version>
-        <springdoc.version>2.3.0</springdoc.version>
+        <springdoc.version>2.0.2</springdoc.version>
     </properties>
 
     <dependencies>
@@ -49,8 +49,12 @@
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
             <version>${springdoc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 

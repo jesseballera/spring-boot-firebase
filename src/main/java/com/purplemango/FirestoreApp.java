@@ -3,9 +3,11 @@ package com.purplemango;
 import com.google.cloud.firestore.Firestore;
 import com.purplemango.handler.PermissionHandler;
 import com.purplemango.model.Permission;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -15,7 +17,6 @@ import org.springdoc.core.annotations.RouterOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -27,6 +28,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import static org.springframework.boot.SpringApplication.run;
 
 @SpringBootApplication(scanBasePackages = "com.purplemango")
+@OpenAPIDefinition(info = @Info(title = "Firestore App", version = "1.0", description = "API documentation for Firestore app"))
 public class FirestoreApp {
 
     @Autowired
@@ -34,7 +36,6 @@ public class FirestoreApp {
 
     public static void main(String[] args) {
         run(FirestoreApp.class, args);
-        WebClient.create("http://localhost:8080");
     }
 
     @Bean

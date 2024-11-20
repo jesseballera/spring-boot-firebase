@@ -1,3 +1,8 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /api
+
 spring:
   cloud:
     gcp:
@@ -5,3 +10,23 @@ spring:
       firestore:
         credentials:
           location: classpath:purple-mango-35d79-firebase-adminsdk-it42e-13071f552f.json
+
+
+springdoc:
+  enable-native-support: true
+  api-docs:
+    version: openapi_3_1
+    enabled: true
+  version: openapi_3_1
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+
+#springdoc:
+#  api-docs:
+#    groups:
+#      enabled: true
+#    path: /swagger-doc/v3/api-docs
+#  swagger-ui:
+#    path: /swagger-ui.html
